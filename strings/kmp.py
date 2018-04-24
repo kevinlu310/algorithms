@@ -16,7 +16,7 @@ def getPi(t):
     pi = [0 for _ in range(len(t))]
     for i in range(1, len(t)):
         if pi[i-1] > 0:
-            if t[i] == t[pi[i-1] + 1]:
+            if t[i] == t[pi[i-1]]:
                 pi[i] = pi[i-1] + 1
             else:
                 pi[i] = 0
@@ -29,8 +29,8 @@ def getPi(t):
 
 
 if __name__ == "__main__":
-    s = "abcefgabcdefg"
-    t = "abcde"
+    s = "ababacaabcefgababaca"
+    t = "ababaca"
     print s
     print t
     print kmp(s, t)
